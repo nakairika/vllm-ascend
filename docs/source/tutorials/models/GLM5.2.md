@@ -131,7 +131,7 @@ If you want to deploy a multi-node environment, you need to set up the environme
 
 ### 5.1 Single-node Deployment
 
-- Quantized model `GLM-5.2-w4a8c8` can be deployed on 1 Atlas 800 A3 (64GB × 16) .
+- Quantized model `GLM-5.2-w4a8c8` can be deployed on 1 Atlas 800 A3 (128GB × 8) .
 
 Run the following script to execute online inference.
 
@@ -189,7 +189,7 @@ If you want to deploy multi-node environment, you need to verify multi-node comm
 ::::{tab-item} A3 series
 :sync: A3
 
-    - `GLM-5.2-w4a8c8`: can be deployed on 2 Atlas 800 A3 (64GB × 16).
+    - `GLM-5.2-w4a8c8`: can be deployed on 2 Atlas 800 A3 (128GB × 16).
 
     Run the following scripts on two nodes respectively.
 **node 0**
@@ -298,7 +298,7 @@ If you want to deploy multi-node environment, you need to verify multi-node comm
 ::::{tab-item} A2 series
 :sync: A2
 
-    - `GLM-5.2-w4a8c8`: can be deployed on 2 Atlas 800 A2 (64GB × 8).
+    - `GLM-5.2-w4a8c8`: can be deployed on 2 Atlas 800 A2 (64GB × 16).
 
 **node 0**
 
