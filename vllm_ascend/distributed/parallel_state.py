@@ -85,7 +85,12 @@ def init_ascend_model_parallel(
 
     global _MC2
     _MC2 = init_model_parallel_group(group_ranks, get_world_group().local_rank, backend, group_name="mc2")
-
+    
+    global _MEGA_MOE
+    if (get_ascend_device_type() == AscendDeviceType.A5 and get_ascend_config().enable_fused_mc2 == 1):
+        _MEGA_MOE = init_model_parallel_group(group_ranks, get_world_group().local_rank, backend, group_name="mega_moe")
+        torch.distributed.barrier(group=_MEGA_MOE.device_group)
+        
     if get_ascend_config().eplb_config.dynamic_eplb:
         global _DYNAMIC_EPLB
         _DYNAMIC_EPLB = init_model_parallel_group(
